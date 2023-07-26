@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Weather/css/style.css">
+</head>
+<body>
+    <div> <!-- Cтрока ввода-->
+        <form id = "findCity">
+            <input id = "textCity" type = "text" value = "Поиск городов">
+            <button id = "find" class = "find" > ㅤ</button>
+        </form>
+    </div>
+    
+    <div>
+        <div class = "block__wheather "> <!-- Блок погоды>-->
+            <div class = "content">
+                <div class = "tabs">
+                    <nav class = "tabs__items">
+                        <a href = "#tab_01" class = "tabs__item"> <span> Сейчас </span></a>
+                        <a href = "#tab_02" class = "tabs__item"> <span> Детально </span></a>
+                        <a href = "#tab_03" class = "tabs__item"> <span> Прогноз </span></a>
+                    </nav>
+                    <div class = "tabs__body">
+                        <div id = "tab_01" class = "tabs__block">
+                            <div id = "degree" class = "degree"> 14° <!-- Градусы-->  </div>
+                            <div class = "showImg"> <!-- Рисунок Облачко--> 
+                                <img src="https://uprostim.com/wp-content/uploads/2021/04/image004-9.png" alt="Облачко" />
+                            </div>
+                            <div class = "favotiteCity"> <!-- Город + избранное -->
+                            <div class = "cityText" > Город </div>
+                            <button id = "like" class = "like" > ㅤ</button>
+                            </div>
+                        </div>
+                        <div id = "tab_02" class = "tabs__block">
+                            <div class = "cityDetail"> Город: </div>
+                            <div id = "degree" class = "temp"> Температура: 14 ° </div>
+                            <div class = "feels"> Ощущается как: 14 °</div>
+                            <div class = "statusWheather"> Статус погоды:  </div>
+                            <div class = "sunrise"> Восход:  </div>
+                            <div class = "sunset"> Закат:  </div>
+                        </div>
+                        <div id = "tab_03" class = "tabs__block">
+                            <div class = "cityText"> Город: </div>
+                            <div>
+                                <div> <!-- Первая строка с датой и временем>-->
+                                    <div id = "date"> </div>
+                                    <div id = "time"></div>
+                                </div>
+
+                                <div> <!-- Блок с температурой и рисунком-->
+                                    <div> <!-- Блок с температурой !НУЖЕН GRID! -->
+                                        <div id = "temp"></div>
+                                        <div id = "feels"></div>
+                                    </div>
+                                    <div> <!-- Блок рисунком -->
+                                        <img src="" alt="">
+                                    </div>
+                                </div>
+
+                                <div> <!-- Блок с температурой и рисунком-->
+                                    <div> <!-- Блок с температурой !НУЖЕН GRID! -->
+                                        <div id = "temp"></div>
+                                        <div id = "feels"></div>
+                                    </div>
+                                    <div> <!-- Блок рисунком -->
+                                        <img src="" alt="">
+                                    </div>
+                                </div>
+
+                                <div> <!-- Блок с температурой и рисунком-->
+                                    <div> <!-- Блок с температурой !НУЖЕН GRID! -->
+                                        <div id = "temp"></div>
+                                        <div id = "feels"></div>
+                                    </div>
+                                    <div> <!-- Блок рисунком -->
+                                        <img src="" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            Третья вкладка. Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                            Harum in suscipit accusantium dolorum, temporibus iste reiciendis sit 
+                            perferendis aspernatur similique natus alias aperiam labore eos, aliquam aut maxime illum optio. 
+                            Много текста не бывает, вкучный сникерс помогает. Да и такое тоже быввает. Хватит читать этот текст. Там ничего полезного. 
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class = "content"> <!-- Избранные города>-->
+                <div class = "addedNameText">
+                    <h2> Избранные города </h2>
+                </div>
+                <div id = "addedCity" class = "likeCity"> <!-- Сохраненные города>-->
+                    <div id = "city__1"  class = "blockCity">
+                        <div  class = "nameCity" > Лондон</div>
+                        <button class = "delCity"> Del </button>
+                    </div>
+                    
+                    <div id = "city__2" class="blockCity">
+                        <div  class = "nameCity"> Амур</div>
+                        <button class = "delCity"> Del </button>
+                    </div>
+
+                    <div id = "city__3" class="blockCity">
+                        <div  class = "nameCity" > Самара</div>
+                        <button class = "delCity"> Del </button>
+                    </div>
+                    <div id = "city__4" class="blockCity">
+                        <div  class = "nameCity" > Токио</div>
+                        <button class = "delCity"> Del </button>
+                    </div>
+
+                </div>
+            </div> 
+        </div> 
+                 
+    </div>
+
+    <script src = "/Weather/js/main.js"></script>
+</body>
+</html>

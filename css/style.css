@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f5f8;
+    font-family: 'Belanosima', sans-serif;
+    margin: 10% auto;
+}
+
+form {
+    max-width: 1000px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;  
+}
+
+    input {
+        width: 95%;
+        font-size: 24px;
+        height: 30px;
+    }
+
+    .find {
+        border: 0;
+        height: 30px;
+        width: 3%;
+        background-color: transparent;
+        background: url(https://w7.pngwing.com/pngs/30/254/png-transparent-computer-icons-magnifying-glass-magnifying-glass-black-and-white-tool-symbol.png) 50% 50% no-repeat;
+        background-size: contain;
+    }
+
+    .find:hover  {
+        background-color: transparent;
+        background: url(https://static.vecteezy.com/system/resources/previews/000/500/282/original/vector-find-icon-design.jpg);
+        background-size: contain;
+        background-position: center;
+        transition: all 0.3s ease-in;
+    }
+
+.block__wheather {
+    max-width: 1000px;
+    display: flex;
+    margin: 0px auto;
+}
+
+.content {
+    border: 2px solid black;
+    max-width: 500px;
+    width: 500px;
+    padding: 0px 0 0px 0;
+    margin: 0px auto;  
+}
+
+.tabs {
+    margin: 0px 0px 0px 0px;
+}
+
+/*Оболочка для вкладок*/
+.tabs__items {
+    display: flex;
+}
+
+/*Сами вкладки*/
+.tabs__item {
+    flex: 0 1 33.333%;
+    border: 2px solid black;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color:dimgrey;
+    text-decoration: none;
+}
+
+.tabs__item span{
+    position: relative;
+    z-index: 2;
+    
+}
+
+.tabs__block {
+    position: relative;
+    padding: 20px 0;
+    font-size: 24px;
+    line-height: 32px;
+    display: none;
+}
+
+.tabs__block:before{
+    content: "";
+    height: 50px;
+    width: 33.333%;
+    position: absolute;
+    top: -50px;
+}
+
+.tabs__block:nth-child(1){
+    background-color: #eb8698;
+}
+
+    .tabs__block:nth-child(1):before{
+        background-color: #eb8698;
+        left: 0;
+    }
+
+    .degree {
+        width: 500px;
+        font-size: 42px;
+        padding: 10px 0 20px 20px;
+    }
+
+    .showImg {
+        width: 500px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+
+    }
+
+    .showImg img {
+        width: 200px;
+        height: 150px;
+    }
+
+    .favotiteCity {
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cityText{
+        width: 85%;
+        font-size: 24px;
+        padding-left: 10px;
+    }
+
+    .like{
+        height: 50%;
+        width: 5%;
+        border: 0;
+        background-color: transparent;
+        background: url(https://cdn-icons-png.flaticon.com/512/101/101224.png);
+        background-size:cover;
+    }
+
+    .like:hover  {
+        background-color: #eb8698;
+        background: url(https://w7.pngwing.com/pngs/437/274/png-transparent-heart-red-heart-thumbnail.png);
+        background-size:cover;
+        transition: all 0.3s ease-in;
+    }
+
+.tabs__block:nth-child(2){
+    background-color: #9278aa;
+}
+
+.tabs__block:nth-child(2):before{
+    background-color: #9278aa;
+    left: 33.333%;
+}
+
+.temp {
+    margin-top: 20px;
+}
+
+.tabs__block:nth-child(3){
+    background-color: #97c67d;
+}
+
+.tabs__block:nth-child(3):before{
+    background-color: #97c67d;
+    right: 0;
+}
+
+/*Покажи блок, на который ведет ссылка*/
+.tabs__block:target {
+    display: block;
+
+}
+
+/* @media (max-width: 600px) {
+    .tabs__items span {
+        display: block;
+        width: 100px;
+        padding: 0 5px;
+        white-space: nowrap;
+        text-align: center;
+        overflow: hidden;
+        font-size: 14px;
+        text-overflow: ellipsis;
+    }    
+} */
+
+.addedNameText {
+    padding: 20px 0 0 35px;
+    border-bottom: 2px solid black;
+}
+
+.likeCity {
+    font-size: 24px;
+    line-height: 32px;
+    margin-top: 20px;
+    padding: 15px 35px;
+}
+
+.blockCity {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.nameCity {
+    width: 90%;
+}
+
+.delCity {
+    width: 10%;
+    /* height: 30px; */
+}
