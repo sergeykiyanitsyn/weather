@@ -14,20 +14,22 @@ body {
     margin: 10% auto;
 }
 
-form {
+.findCity {
     max-width: 1000px;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    margin: 10px auto;  
+    margin: 10px auto;
+    box-sizing: border-box;  
 }
 
-    input {
+    .findCity .textCity {
         width: 95%;
         font-size: 24px;
         height: 30px;
     }
 
-    .find {
+    .findCity .find {
         border: 0;
         height: 30px;
         width: 3%;
@@ -54,37 +56,54 @@ form {
     border: 2px solid black;
     max-width: 500px;
     width: 500px;
-    padding: 0px 0 0px 0;
+    padding: 0;
     margin: 0px auto;  
 }
 
 .tabs {
-    margin: 0px 0px 0px 0px;
+    margin: 0;
 }
 
 /*Оболочка для вкладок*/
 .tabs__items {
+    width: 100%;
     display: flex;
+    box-sizing: border-box;
 }
 
 /*Сами вкладки*/
 .tabs__item {
-    flex: 0 1 33.333%;
-    border: 2px solid black;
+    width: 33%;
+    flex: 0 1 33.333%; /* Отвечает за "покраску" элементов (табов)*/
+    border-bottom: 2px solid black; 
     height: 50px;
     display: flex;
-    justify-content: center;
     align-items: center;
+}
+
+.tab_2 {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.tabs__btn {
+    width: 100%;
+    height: 100%;
+    justify-content:center;
+    text-align: center;
+    text-decoration: none;
     text-transform: uppercase;
     color:dimgrey;
-    text-decoration: none;
+    padding-top: 15px;  
 }
+
 
 .tabs__item span{
     position: relative;
     z-index: 2;
     
 }
+
 
 .tabs__block {
     position: relative;
@@ -93,6 +112,7 @@ form {
     line-height: 32px;
     display: none;
 }
+
 
 .tabs__block:before{
     content: "";

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather</title>
     <link rel="stylesheet" href="/Weather/css/style.css">
 </head>
 <body>
     <div> <!-- Cтрока ввода-->
-        <form id = "findCity">
-            <input id = "textCity" type = "text" value = "Поиск городов">
+        <form id = "findCity" class="findCity">
+            <input id = "textCity" class="textCity" type = "text" placeholder = "Введите название города" >
             <button id = "find" class = "find" > ㅤ</button>
         </form>
     </div>
@@ -19,9 +19,15 @@
             <div class = "content">
                 <div class = "tabs">
                     <nav class = "tabs__items">
-                        <a href = "#tab_01" class = "tabs__item"> <span> Сейчас </span></a>
-                        <a href = "#tab_02" class = "tabs__item"> <span> Детально </span></a>
-                        <a href = "#tab_03" class = "tabs__item"> <span> Прогноз </span></a>
+                        <div class="tab_1 tabs__item">
+                            <a href = "#tab_01" class = "tabs__btn"> <span> Сейчас </span></a>
+                        </div>
+                        <div class="tab_2 tabs__item">
+                            <a href = "#tab_02" class = "tabs__btn"> <span> Детально </span></a>
+                        </div>
+                        <div class="tab_3 tabs__item">
+                          <a href = "#tab_03" class = "tabs__btn"> <span> Прогноз </span></a>
+                        </div>
                     </nav>
                     <div class = "tabs__body">
                         <div id = "tab_01" class = "tabs__block">

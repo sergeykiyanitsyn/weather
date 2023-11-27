@@ -21,33 +21,38 @@ const statusWheather = document.querySelector(".statusWheather");
 const sunrise = document.querySelector(".sunrise");
 const sunset = document.querySelector(".sunset");
 
+textCity.focus()
 findCity.addEventListener("submit", checkCity); // Отправка  формы
 
 //let allCity = [];
 
-function checkCity() {
-    const cityName = textCity.value;
-    const url = `${serverUrl}?q=${cityName}&appid=${apiKey}`;
+async function checkCity() {
+     
+    try {
+        const cityName = textCity.value;
+        const url = `${serverUrl}?q=${cityName}&appid=${apiKey}`;
+        const responce = await fetch(url);
+        const data = await responce.json();
+        const getSun = new Date(data.sys.sunrise * 1000);
+        const getSet =  new Date(data.sys.sunset * 1000);
+        
+        writeCity.textContent = data.name;
+        degree.textContent = Math.round(data.main.temp - 273) + "°";
 
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            writeCity.textContent = data.name;
-            degree.textContent = Math.round(data.main.temp - 273) + "°";
+        cityDetail.textContent = "Город: " + data.name;
+        temp.textContent = "Температура: " + degree.textContent;
+        feels.textContent = "Ощущается как: " + Math.round(data.main.feels_like - 273) + "°";
+        statusWheather.textContent = "Статус погоды: " + data.weather[0].description;
 
-            cityDetail.textContent = "Город: " + data.name;
-            temp.textContent = "Температура: " + degree.textContent;
-            feels.textContent = "Ощущается как: " + Math.round(data.main.feels_like - 273) + "°";
-            statusWheather.textContent = "Статус погоды: " + data.weather[0].description;
-
-            let getSun = new Date(data.sys.sunrise * 1000);
-            sunrise.textContent = "Восход: " + getSun.getDate() + "."+ getSun.getMonth() + "." + getSun.getFullYear()+ " " + getSun.getHours() + ":" + getSun.getMinutes() + " (МСК)";
-             let getSet=  new Date(data.sys.sunset * 1000);
-             sunset.textContent = "Закат: " + getSet.getDate() + "."+ getSet.getMonth() + "." + getSet.getFullYear()+ " " + getSet.getHours() + ":" + getSet.getMinutes() + " (МСК)";
-        })
-        .catch(error => console.error(error));
+        sunrise.textContent = "Восход: " + getSun.getDate() + "."+ getSun.getMonth() + "." + getSun.getFullYear()+ " " + getSun.getHours() + ":" + getSun.getMinutes() + " (МСК)";
+        sunset.textContent = "Закат: " + getSet.getDate() + "."+ getSet.getMonth() + "." + getSet.getFullYear()+ " " + getSet.getHours() + ":" + getSet.getMinutes() + " (МСК)";
+    } catch(e) {
+        console.error(e)
+    }
+    
 }
+
+
 
 let del = document.getElementsByClassName(".delCity");
 for (i = 0; i < del.length; i++){
@@ -57,13 +62,29 @@ for (i = 0; i < del.length; i++){
 
 like.addEventListener("click", addCity)
 
+//Надо переделать сохранение городов через Set
+const favoriteCities = new Set();
+
 function addCity () {
+    
     const message = writeCity.textContent ;
+
+    // document.cookie = "name = " + message + ";" + "max-age = 1200; path = /"; // Проверка куки
     let clon = newDiv.cloneNode(true);
     clon.querySelector('.nameCity').textContent = message;
     likeCity.appendChild(clon);        // Добавить div в конец 
 
+    favoriteCities.add(writeCity.textContent);
+    for (let key of favoriteCities){
+    console.log(key);
+    }
+// //Изучение spread 
+//     const allCities = [...favoriteCities];
+//     console.log(allCities);
 }
+
+
+
 
 let addedCity = document.querySelector('#addedCity');
   
@@ -76,7 +97,6 @@ let addedCity = document.querySelector('#addedCity');
 
     addedCity.addEventListener('click', function(event) {
         if (event.target.classList.contains('nameCity')) {
-            console.log (event.target)
             textCity.value = event.target.textContent.trim(); // trim удаляет пробел в самом начале
             checkCity();
         }
